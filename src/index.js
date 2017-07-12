@@ -1,15 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+// Import react
+// Go find the 'react' library from node_modules and assign it to React variable so this file can use it. 
+import React from 'react'
 
-import App from './components/app';
-import reducers from './reducers';
+//Create a Component
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+//const is ES6 type and we cannot reassign any value to variable App
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+const App = function() {
+  return <div>Helo</div>;
+}
+
+//Render a Component
