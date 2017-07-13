@@ -11,11 +11,7 @@ import React, {Component} from 'react';
 // This is a class component and need to inherit all properties from react
 class SearchBar extends Component{
     render() {
-      return <input onChange={this.onInputChange} />;
-    }
-
-    onInputChange(event) {
-      console.log(event.target.value);
+      return <input onChange={event => console.log(event.target.value)} />;
     }
 }
 
