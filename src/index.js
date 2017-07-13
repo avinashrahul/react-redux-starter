@@ -2,6 +2,7 @@
 // Go find the 'react' library from node_modules and assign it to React variable so this file can use it.
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SearchBar from './components/search_bar';
 
 // Youtube api key
 const API_KEY = 'AIzaSyCOikGitYBBuKqY9jVbV81sggypognwvV4';
@@ -15,8 +16,12 @@ const API_KEY = 'AIzaSyCOikGitYBBuKqY9jVbV81sggypognwvV4';
 // }
 
 const App = function() {
-  return <div>Hello Sling!!</div>;
-}
+  return(
+    <div>
+      <SearchBar />
+    </div>
+  );
+};
 
 //Render a Component
 // ReactDOM.render(App) - Do not pass App directly since it is a class, create an instance like below
