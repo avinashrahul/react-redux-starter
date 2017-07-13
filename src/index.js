@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
+import YTSearch from 'youtube-api-search';
 
 // Youtube api key
 const API_KEY = 'AIzaSyCOikGitYBBuKqY9jVbV81sggypognwvV4';
@@ -14,6 +15,9 @@ const API_KEY = 'AIzaSyCOikGitYBBuKqY9jVbV81sggypognwvV4';
 // const App = () => {
 //   return <div>Hello Sling!!</div>;
 // }
+YTSearch({key: API_KEY, term: 'surfboards'}, function(data) {
+  console.log(data);
+});
 
 const App = function() {
   return(

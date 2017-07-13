@@ -14,10 +14,15 @@ class SearchBar extends Component{
     // whenever some state changes inside constructor render and all sub menthods gets called.
     constructor(props) {
       super(props);
-      this.state = {'term': ''};
+      this.state = {term: ''};
     }
     render() {
-      return <input onChange={event => console.log(event.target.value)} />;
+      return(
+        <div>
+          <input onChange={event => this.setState({term: event.target.value})} />
+          Value {this.state.term}
+        </div>
+      );
     }
 }
 
