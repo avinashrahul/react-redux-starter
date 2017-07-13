@@ -10,6 +10,12 @@ import React, {Component} from 'react';
 
 // This is a class component and need to inherit all properties from react
 class SearchBar extends Component{
+    // Whenever searchbar component gets called constructor gets executed by default.
+    // whenever some state changes inside constructor render and all sub menthods gets called.
+    constructor(props) {
+      super(props);
+      this.state = {'term': ''};
+    }
     render() {
       return <input onChange={event => console.log(event.target.value)} />;
     }
