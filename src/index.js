@@ -22,10 +22,10 @@ const API_KEY = 'AIzaSyCOikGitYBBuKqY9jVbV81sggypognwvV4';
 class App extends Component{
   constructor(props) {
     super(props);
-    this.state = {videos: []};
+    this.state = {videos: [], selectedVideo: null};
 
     YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
-      this.setState({videos}) //ES6 syntax same as this.setState({videos: videos})
+      this.setState({videos: videos, selectedVideo: videos[0]}) //ES6 syntax same as this.setState({videos: videos})
     });
   }
 
@@ -34,8 +34,11 @@ class App extends Component{
     return(
       <div>
         <SearchBar />
-        <VideoDetail video={this.state.videos[0]}/>
-        <VideoList videos={this.state.videos}/>
+        <VideoDetail video={this.state.selectedVideo}/>
+        //onVideoSelect - create a prop just to pass to child component which is video list item
+        // and then updates the state 
+        <VideoList videos={this.state.videos}
+          onVideoSelect={(selectedVideo) => this.setState({selectedVideo: selectedVideo})}/>
       </div>
     );
   }
